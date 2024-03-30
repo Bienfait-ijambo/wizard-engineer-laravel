@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Validator;
 use DB;
 use Storage;
 use url;
+
 
 class PostController extends Controller
 {
@@ -51,23 +53,33 @@ class PostController extends Controller
     	]);
 
     	if ($errors->fails()) {
-    		
     		return response($errors->errors()->all(),422);
     	}
+
+       
 
     	$post=Post::create([
     		'title'=>$fields['title'],
     		'post_content'=>$fields['post_content'],
+        'slug'=>$this->generateSlug($fields['title'])
     	]);
 
     	return response(['message'=>'post created !'],201);
+    }
+
+    function generateSlug($title)
+    {
+       $randomNumber = Str::random(6) . time();
+       $slug=Str::slug($title).'-'.$randomNumber;
+       return $slug;
     }
 
     function update(Request $request,$id)
     {
     	Post::where('id',$id)->update([
     		'title'=>$request->title,
-    		'post_content'=>$request->post_content
+    		'post_content'=>$request->post_content,
+        'slug'=>$this->generateSlug($request->title)
     	]);
 
     	return response(['message'=>'post updated !'],200);
@@ -78,6 +90,19 @@ class PostController extends Controller
     	Post::where('id',$id)->delete();
 
     	return response(['message'=>'post deleted !'],200);
+    }
+
+    function getPostBySlug($slug)
+    {
+      $posts=Post::where('slug',$slug)->get();
+      if (count($posts)) {
+        return response($posts,200);
+      }else{
+        return response($posts,200);
+
+      }
+
+      
     }
 
    
