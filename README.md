@@ -11,4 +11,42 @@
 
 1. Run `composer install` command
 
-1. Run `php artisan serve` command
+2. Run `php artisan serve` command
+
+
+### Api documentation
+
+#### User Model : create user
+
+```js
+	POST
+```
+
+Endpoint
+
+```js
+	/users
+```
+
+Request body
+
+```js
+	{
+	  "name": "string",
+	  "email": "string",
+	  "password": "string"
+	}
+```
+
+Response body
+
+```js
+	{
+		user: {
+		  "name": "string",
+		  "email": "string",
+		  "password": "string"
+		},
+		message:"user created !"
+	}
+```
