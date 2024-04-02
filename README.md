@@ -14,9 +14,9 @@
 2. Run `php artisan serve` command
 
 
-### Api documentation
+## Api documentation
 
-#### [User Model : create user]()
+### [User Model : create user]()
 
 ```js
 	POST
