@@ -16,7 +16,7 @@
 
 ## Api documentation
 
-### [User Model : create user]()
+### 1. [User Model : create user]()
 
 ```js
 	POST
@@ -48,5 +48,65 @@ Response body
 		  "password": "string"
 		},
 		message:"user created !"
+	}
+```
+
+
+### 2. [User Model : login user]()
+
+```js
+	POST
+```
+
+Endpoint
+
+```js
+	/users
+```
+
+Request body
+
+```js
+	{
+	  "email": "string",
+	  "password": "string"
+	}
+```
+
+Response body
+
+```js
+	{
+		user: {
+		  "name": "ben",
+		  "email": "ben@gmail.com",
+		},
+		token:"$2b$10$0O.pVCtZO2QgxfPKh0WNsudCHglKsoGwhJ0GXciLYzHCa73x99Gpa"
+	}
+```
+
+### 3. [User Model : logout user]()
+
+```js
+	POST
+```
+
+Endpoint
+```js
+	/logout
+```
+
+Request body
+
+```js
+	{
+	  "userId": 1,
+	}
+```
+
+Response body with status 200
+```js
+	{
+		"message":"user logged out !"
 	}
 ```
