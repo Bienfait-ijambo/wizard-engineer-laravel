@@ -16,7 +16,7 @@
 
 ### Api documentation
 
-#### User Model : create user
+#### [User Model : create user]
 
 ```js
 	POST
