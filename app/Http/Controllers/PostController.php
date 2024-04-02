@@ -17,7 +17,10 @@ class PostController extends Controller
    function loadMorePost(Request $request)
    {
 
-        $data=DB::table('posts')->orderBy('id','asc')->paginate(6);
+        $data=DB::table('posts')
+        ->orderBy('id','asc')
+        ->paginate(1);
+
         return response($data,200);
      
    }

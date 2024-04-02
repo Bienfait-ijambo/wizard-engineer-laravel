@@ -29,6 +29,7 @@ Route::post('login',[AuthController::class,'login']);
 
 Route::get('posts',[PostController::class,'getPosts']);
 Route::get('posts/{slug}',[PostController::class,'getPostBySlug']);
+Route::get('/client/posts',[PostController::class,'loadMorePost']);
 
 	
 
@@ -46,7 +47,6 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
 });
 
 
-Route::get('/client/posts',[PostController::class,'loadMorePost']);
 
 
 // store
