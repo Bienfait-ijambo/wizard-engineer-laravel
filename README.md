@@ -9,9 +9,13 @@
 
 ### `cd in laravel-blog` and run :
 
-1. Run `composer install` command
+1. git clone `https://github.com/Bienfait-ijambo/wizard-engineer-laravel.git`
 
-2. Run `php artisan serve` command
+2. cd in `wizard-engineer-laravel`
+
+3. Run `composer install` command
+
+4. Run `php artisan serve` command
 
 
 # Api documentation
@@ -21,7 +25,7 @@
 ### 1. [User Model : create user]()
 
 ```js
-	POST
+POST
 ```
 
 Endpoint
