@@ -57,12 +57,18 @@ class AuthController extends Controller
 
         if (!$user || !Hash::check($fields['password'],$user->password)) {
            
-           return response(['message'=>'email or password invalid'],401);
+           return response([
+            'message'=>'email or password invalid',
+            'isLogged'=>false
+           ],
+            401);
         }
 
         $token=$user->createToken($this->secretKey)->plainTextToken;
 
         return response([
+            'message'=>'user logged',
+            'isLogged'=>true,
             'user'=>$user,
             'token'=>$token
         ],201);

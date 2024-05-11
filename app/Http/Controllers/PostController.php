@@ -18,8 +18,8 @@ class PostController extends Controller
    {
 
         $data=DB::table('posts')
-        ->orderBy('id','asc')
-        ->paginate(1);
+        ->orderBy('id','desc')
+        ->get();
 
         return response($data,200);
      
@@ -40,10 +40,10 @@ class PostController extends Controller
     		
     		$posts=$data->where('title','like','%'.$query.'%');
 
-    		return response($posts->paginate(7),200);
+    		return response(['data'=>$data->get()],200);
     	}
 
-    	return response($data->paginate(7),200);
+    	return response(['data'=>$data->get()],200);
     }
 
     function store(Request $request)

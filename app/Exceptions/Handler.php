@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Exceptions;
-
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use Throwable;
 class Handler extends ExceptionHandler
 {
     /**
@@ -32,15 +33,22 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        //  if ($request->is('api/*')) {
-        //         return response()->json([
-        //             'status'  => 401,
-        //             'message' => 'Not authenticated'
-        //         ],401);
+         
+    }
 
-        //     }
+
+    public function render($request, Throwable $exception)
+    {
+
+        if ($request->is('api/*')) {
+                return response()->json([
+                    'status'  => 401,
+                    'message' => 'Not authenticated'
+                ],401);
+
+            }
         
 
-        // return parent::render($request, $exception);
+        return parent::render($request, $exception);
     }
 }
