@@ -15,8 +15,11 @@
 
 3. Run `composer install` command
 
+4. Run `php artisan migrate` command for database
+
 4. Run `php artisan serve` command
 
+## NB: If you are not a laravel developper this is the Node Repo for final project []. If you are a laravel dev. make sure to create a env file and a db.
 
 # Api documentation
 
