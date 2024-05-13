@@ -33,7 +33,7 @@ Route::get('/client/posts',[PostController::class,'loadMorePost']);
 
 	
 
-
+Route::get('/count/posts',[PostController::class,'countPost']);
 //protected
 Route::group(['middleware'=>['auth:sanctum']],function(){
 

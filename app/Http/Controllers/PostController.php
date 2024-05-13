@@ -28,6 +28,8 @@ class PostController extends Controller
    function countPost(Request $request)
    {
     // HOMEWORK
+      $count=Post::count();
+      return response(['data'=>$count],200);
    }
 
     function getPosts(Request $request)

@@ -293,7 +293,6 @@ Endpoint
 Response body with status 200
 ```js
 {
-"current_page": 1,
 	"data": [
 		{
 		"id": 3,
@@ -304,21 +303,53 @@ Response body with status 200
 		"created_at": "2024-03-10 14:32:29",
 		"updated_at": "2024-03-30 14:52:24"
 		}
-	],
-		"first_page_url": "http://127.0.0.1:8000/api/client/posts?page=1",
-	"from": 1,
-	"last_page": 9,
-	"last_page_url": "http://127.0.0.1:8000/api/client/posts?page=9",
-	"links": [....],
-	"next_page_url": "http://127.0.0.1:8000/api/client/posts?page=2",
-	"path": "http://127.0.0.1:8000/api/client/posts",
-	"per_page": 1,
-	"prev_page_url": null,
-	"to": 1,
-	"total": 9
+	]
 }
 
 ```
 
 
+
+### 6. Return number of created posts
+
+
+
+```js
+	GET
+```
+
+Endpoint
+```js
+	/count/posts
+```
+
+Response body with status 200
+```js
+{
+	"data": 5
+}
+
+```
+
+
+### 7. Check if user is logged in[return true or false]
+
+
+
+```js
+	GET
+```
+
+Endpoint
+```js
+	/check/user/loggedin
+```
+
+Response body with status 200
+```js
+{
+	"success": true
+}
+
+```
 

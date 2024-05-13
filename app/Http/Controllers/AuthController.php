@@ -88,7 +88,7 @@ class AuthController extends Controller
 
     public function userIsLoggedIn(Request $request)
     {
-        return response(['message'=>''],200);
+        return response(['success'=>true],200);
     }
 
 
