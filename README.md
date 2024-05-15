@@ -353,3 +353,35 @@ Response body with status 200
 
 ```
 
+
+### 8. return a list of posts
+
+
+
+```js
+	GET
+```
+
+Endpoint
+```js
+	/client/posts
+```
+
+Response body with status 200
+```js
+[
+	
+	{
+		"id": 5,
+		"title": "What is TypeScript",
+		"post_content": "",
+		"image": "http://127.0.0.1:8000/storage/images/1715743244.jpg",
+		"slug": "what-is-typescript-8yXHkQ1715743297",
+		"created_at": "2024-05-15 03:20:05",
+		"updated_at": "2024-05-15 03:21:37"
+	},
+
+]
+
+```
+
