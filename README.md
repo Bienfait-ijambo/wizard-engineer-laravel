@@ -43,6 +43,8 @@ Request body
 	{
 	  "name": "string",
 	  "email": "string",
+ "password": "string",
+
 	}
 ```
 
